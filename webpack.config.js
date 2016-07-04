@@ -1,8 +1,5 @@
 const NODE_ENV = process.env.NODE_ENV;
-<<<<<<< HEAD
 const dotenv = require('dotenv');
-=======
->>>>>>> master
 
 const webpack = require('webpack');
 const fs      = require('fs');
