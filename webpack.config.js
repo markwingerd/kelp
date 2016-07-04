@@ -1,4 +1,8 @@
 const NODE_ENV = process.env.NODE_ENV;
+<<<<<<< HEAD
+const dotenv = require('dotenv');
+=======
+>>>>>>> master
 
 const webpack = require('webpack');
 const fs      = require('fs');
@@ -23,6 +27,33 @@ var config = getConfig({
   clearBeforeBuild: true
 })
 
+<<<<<<< HEAD
+// ENV variables
+const dotEnvVars = dotenv.config();
+const environmentEnv = dotenv.config({
+  path: join(root, 'config', `${NODE_ENV}.config.js`),
+  silent: true,
+});
+const envVariables =
+  Object.assign({}, dotEnvVars, environmentEnv);
+
+const defines =
+  Object.keys(envVariables)
+  .reduce((memo, key) => {
+    const val = JSON.stringify(envVariables[key]);
+    memo[`__${key,toUpperCase()}__`] = val;
+    return memo;
+  }, {
+    __NODE_ENV__: JSON.stringify(NODE_ENV)
+  });
+
+config.plugins = [
+  new webpack.DefinePlugin(defines)
+].concat(config.plugins);
+// END ENV variables
+
+=======
+>>>>>>> master
 // CSS modules
 const cssModulesNames = `${isDev ? '[path][name]__[local]__' : ''}[hash:base64:5]`;
 const matchCssLoaders = /(^|!)(css-loader)($|!)/;
