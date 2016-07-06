@@ -39,7 +39,7 @@ const defines =
   Object.keys(envVariables)
   .reduce((memo, key) => {
     const val = JSON.stringify(envVariables[key]);
-    memo[`__${key,toUpperCase()}__`] = val;
+    memo[`__${key.toUpperCase()}__`] = val;
     return memo;
   }, {
     __NODE_ENV__: JSON.stringify(NODE_ENV)
