@@ -1,3 +1,5 @@
+@import url("../../styles/base.css");
+
 .topbar {
   position: fixed;
   z-index: 10;
@@ -7,7 +9,8 @@
   width: 100%;
   padding: 0 25px;
   height: 80px;
-  line-height: 80px;
+  height: var(--topbar-height);
+  line-height: var(--topbar-height);
   color: #fff;
 
   a {
