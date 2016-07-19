@@ -7,6 +7,18 @@ import styles from './styles.module.css'
 export class MapComponent extends React.Component {
   renderChildren() {
     const {children} = this.props;
+    // Bugfix below. This may be further in the tut
+    if (React.Children.count(children) > 0) {
+      return React.Children.map(children, c => {
+        return React.cloneElement(c, this.props, {
+          map: this.props.map,
+          google: this.props.google
+        })
+      })
+    } else {
+      return this.renderMarkers();
+    }
+    // END bugfix
   }
   renderMarkers() {
     if (!this.props.places) { return null; }
