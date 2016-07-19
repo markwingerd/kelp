@@ -40,7 +40,7 @@ export class Detail extends React.Component {
     super(props, context)
 
     this.state = {
-      loading = true,
+      loading: true,
       place: {},
       location: {}
     }
