@@ -1,6 +1,6 @@
 import React, { PropTypes as T } from 'react'
 import classnames from 'classnames'
-import Map, { Marker } from 'google-maps-react'
+import Map, {GoogleApiWrapper, Marker} from 'google-maps-react'
 
 import styles from './styles.module.css'
 
